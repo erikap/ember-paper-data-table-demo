@@ -1,0 +1,35 @@
+<div class="layout-row">
+  <div class="flex table-example">
+    <h2>My simple books table</h2>
+    {{#if enableFilter}}
+      {{data-table content=model fields="title isbn genre publicationDate language numberOfPages" sort=sort page=page size=size filter=filter}}
+    {{else}}
+      {{data-table content=model fields="title isbn genre publicationDate language numberOfPages" sort=sort page=page size=size}}
+    {{/if}}
+  </div>
+  <div class="flex-30 option-panel">
+    <h2>Parameters</h2>
+    <div class="layout-column options">
+      <div class="layout-row layout-align-start-center option">
+        <div class="option-key flex-none">Sorting</div>
+        <div class="option-value">{{#if sort}}{{sort}}{{else}}<i>null</i>{{/if}}</div>
+      </div>
+      <div class="layout-row layout-align-start-center option">
+        <div class="option-key flex-none">Page number</div>
+        <div class="option-value">
+          {{paper-input class="flex-30" value=page onChange=(action (mut page)) type="number" min="0"}}
+        </div>
+      </div>
+      <div class="layout-row layout-align-start-center option">
+        <div class="option-key flex-none">Page size</div>
+        <div class="option-value">
+          {{paper-input class="flex-30" value=size onChange=(action (mut size)) type="number" min="1"}}
+        </div>
+      </div>
+      <div class="layout-row layout-align-start-center option">
+        <div class="option-key flex-none">Search</div>
+        <div class="option-value">{{paper-checkbox value=enableFilter primary=true onChange=(action (mut enableFilter))}}</div>
+      </div>
+    </div>
+  </div>
+</div>

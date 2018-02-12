@@ -1,5 +1,28 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{#paper-toolbar as |toolbar|}}
+  {{#toolbar.tools}}
+    <h1 class="brand-logo">Ember Paper Data Table demo</h1>
+    <span class="flex"></span>
+    {{#paper-menu as |menu|}}
+      {{#menu.trigger}}
+        {{#paper-button}}Examples {{paper-icon "expand more"}}{{/paper-button}}
+      {{/menu.trigger}}
+      {{#menu.content width=3 as |content|}}
+        {{#content.menu-item onClick="goToSimple"}}
+          <span>Simple example</span>
+        {{/content.menu-item}}
+        {{#content.menu-item onClick="goToAdvanced"}}
+          <span>Advanced example</span>
+        {{/content.menu-item}}
+      {{/menu.content}}
+    {{/paper-menu}}
+    <a href="https://github.com/mu-semtech/ember-paper-data-table" class="no-hover">{{fa-icon "github" size=2}}</a>
+  {{/toolbar.tools}}
+{{/paper-toolbar}}
 
-{{outlet}}
+<main>
+  {{outlet}}
+
+  <div class="footer">
+    <a href="https://github.com/erikap/ember-paper-data-table-demo">Demo source code</a>
+  </div>
+</main>

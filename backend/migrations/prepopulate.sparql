@@ -1,0 +1,90 @@
+prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix schema:	<http://schema.org/>
+prefix mu:	<http://mu.semte.ch/vocabularies/core/>
+
+INSERT DATA {
+  GRAPH <http://mu.semte.ch/application> {
+    <http://mu.semte.ch/services/github/madnificent/book-service/books/58ADFFFFA2F1740009000001>	rdf:type	schema:Book ;
+      mu:uuid	"58ADFFFFA2F1740009000001" ;
+	    schema:headline	"The Hitchhiker's Guide to the Galaxy" ;
+	    schema:isbn	"9788636505700" ;
+      schema:datePublished "1979-10-12"^^<http://www.w3.org/2001/XMLSchema#date> ;
+      schema:genre "Science Fiction" ;
+      schema:inLanguage "en" ;
+      schema:numberOfPages "180"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	    schema:author	<http://mu.semte.ch/services/github/madnificent/book-service/authors/58AE02A9AF84930009000002> .
+    <http://mu.semte.ch/services/github/madnificent/book-service/books/58AE0133A2F1740009000002>	rdf:type	schema:Book ;
+    	mu:uuid	"58AE0133A2F1740009000002" ;
+    	schema:headline	"Getting Things Done" ;
+    	schema:isbn	"9780670899241" ;
+      schema:datePublished "2001-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+      schema:genre "Non-fiction" ;
+      schema:inLanguage "en" ;
+      schema:numberOfPages "267"^^<http://www.w3.org/2001/XMLSchema#int> ;
+    	schema:author	<http://mu.semte.ch/services/github/madnificent/book-service/authors/58AE0222AF84930009000001> .
+    <http://mu.semte.ch/services/github/madnificent/book-service/books/620f7a1c-9d31-4b8a-a627-2eb6904fe1f3>	rdf:type	schema:Book ;
+    	mu:uuid	"620f7a1c-9d31-4b8a-a627-2eb6904fe1f3" ;
+    	schema:headline	"Rock & Roll with Ember" ;
+      schema:datePublished "2015-02-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+      schema:genre "Non-fiction" ;
+      schema:inLanguage "en" ;
+      schema:numberOfPages "314"^^<http://www.w3.org/2001/XMLSchema#int> ;
+    	schema:author	<http://mu.semte.ch/services/github/madnificent/book-service/authors/1e8bbd57-b668-485c-9f66-775923e3e883> .
+    <http://mu.semte.ch/services/github/madnificent/book-service/books/0027b788-7df7-4d23-b407-e1179813d481>	rdf:type	schema:Book ;
+    	mu:uuid	"0027b788-7df7-4d23-b407-e1179813d481" ;
+    	schema:headline	"Le Petit Prince" ;
+    	schema:isbn	"9788998469863" ;
+      schema:datePublished "1943-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+      schema:genre "Fable" ;
+      schema:inLanguage "fr" ;
+      schema:numberOfPages "93"^^<http://www.w3.org/2001/XMLSchema#int> ;
+    	schema:author	<http://mu.semte.ch/services/github/madnificent/book-service/authors/4d0fbd9b-84f9-4d07-9ee1-2e0c933616b3> .
+    <http://mu.semte.ch/services/github/madnificent/book-service/books/1dd5a6d8-e833-40b9-8799-811dbd5627d2>	rdf:type	schema:Book ;
+      mu:uuid	"1dd5a6d8-e833-40b9-8799-811dbd5627d2" ;
+	    schema:headline	"A la recherche du temps perdu" ;
+	    schema:isbn	"9788893153812" ;
+      schema:datePublished "1913-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+      schema:genre "Modern" ;
+      schema:inLanguage "fr" ;
+      schema:numberOfPages "4215"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	    schema:author	<http://mu.semte.ch/services/github/madnificent/book-service/authors/dceed930-665e-4dd4-b6bc-1cb5c8bebebe> .
+    <http://mu.semte.ch/services/github/madnificent/book-service/books/7363c112-dd04-4061-bea5-a266c23556cc> rdf:type	schema:Book ;
+      mu:uuid	"7363c112-dd04-4061-bea5-a266c23556cc" ;
+	    schema:headline	"Hamlet" ;
+      schema:datePublished "1603-01-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+      schema:genre "Tragedy" ;
+      schema:inLanguage "en" ;
+	    schema:author	<http://mu.semte.ch/services/github/madnificent/book-service/authors/9fb744e0-a787-4138-a7f0-54f812343fa7> .
+    <http://mu.semte.ch/services/github/madnificent/book-service/books/535565ac-381d-4117-acf5-fc6236e9a46b>	rdf:type	schema:Book ;
+      mu:uuid	"535565ac-381d-4117-acf5-fc6236e9a46b" ;
+	    schema:headline	"Learning SPARQL" ;
+	    schema:isbn	"9781449306595" ;
+      schema:datePublished "2011-07-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+      schema:genre "Non-fiction" ;
+      schema:inLanguage "en" ;
+      schema:numberOfPages "258"^^<http://www.w3.org/2001/XMLSchema#int> ;
+	    schema:author	<http://mu.semte.ch/services/github/madnificent/book-service/authors/6ef13e64-8304-4137-91b4-e37e52ad4c1d> .
+
+    <http://mu.semte.ch/services/github/madnificent/book-service/authors/58AE0222AF84930009000001>	rdf:type	schema:Author ;
+    	mu:uuid	"58AE0222AF84930009000001" ;
+    	schema:name	"David Allen" .
+    <http://mu.semte.ch/services/github/madnificent/book-service/authors/58AE02A9AF84930009000002>	rdf:type	schema:Author ;
+    	mu:uuid	"58AE02A9AF84930009000002" ;
+    	schema:name	"Douglas Adams" .
+    <http://mu.semte.ch/services/github/madnificent/book-service/authors/1e8bbd57-b668-485c-9f66-775923e3e883> rdf:type schema:Author ;
+      mu:uuid "1e8bbd57-b668-485c-9f66-775923e3e883" ;
+      schema:name "Balint Erdi" .
+    <http://mu.semte.ch/services/github/madnificent/book-service/authors/4d0fbd9b-84f9-4d07-9ee1-2e0c933616b3> rdf:type schema:Author ;
+      mu:uuid "4d0fbd9b-84f9-4d07-9ee1-2e0c933616b3" ;
+      schema:name "Antoine de Saint-Exupery" .
+    <http://mu.semte.ch/services/github/madnificent/book-service/authors/dceed930-665e-4dd4-b6bc-1cb5c8bebebe> rdf:type schema:Author ;
+      mu:uuid "dceed930-665e-4dd4-b6bc-1cb5c8bebebe" ;
+      schema:name "Marcel Proust" .
+    <http://mu.semte.ch/services/github/madnificent/book-service/authors/9fb744e0-a787-4138-a7f0-54f812343fa7> rdf:type schema:Author ;
+      mu:uuid "9fb744e0-a787-4138-a7f0-54f812343fa7" ;
+      schema:name "William Shakespeare" .
+    <http://mu.semte.ch/services/github/madnificent/book-service/authors/6ef13e64-8304-4137-91b4-e37e52ad4c1d> rdf:type schema:Author ;
+      mu:uuid "6ef13e64-8304-4137-91b4-e37e52ad4c1d" ;
+      schema:name "Bob DuCharme" .
+  }
+}

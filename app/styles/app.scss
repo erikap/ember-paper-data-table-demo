@@ -1,0 +1,55 @@
+$primary: "red";
+$accent: "light-blue";
+
+@import 'ember-paper';
+@import 'ember-paper-data-table';
+
+main {
+  margin: 25px;
+}
+
+.md-toolbar-tools {
+  text-align: center;
+
+  h1 {
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}
+
+.table-example {
+  border-right: 2px solid #e53935;
+  padding-right: 20px;
+}
+
+.option-panel {
+  padding-left: 20px;
+
+  .option {
+    min-height: 50px;
+
+    .option-key {
+      min-width: 110px;
+    }
+
+    .option-value {
+      md-input-container {
+        margin: 0;
+
+        .md-errors-spacer {
+          min-height: 0;
+        }
+      }
+
+      md-checkbox {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.footer {
+  font-size: 0.8em;
+  margin-top: 15px;
+}

@@ -1,0 +1,103 @@
+<div class="layout-row">
+  <div class="flex table-example">
+    <h2>My advanced books table</h2>
+    {{#if enableFilter}}
+      {{#data-table content=model sort=sort page=page size=size filter=filter enableSizes=enableSizes lineNumbers=enableLineNumbers as |t|}}
+        {{#t.menu as |menu|}}
+          {{#menu.general}}
+            {{#paper-button onClick=(action "export") accent=true noInk=true}}Export{{/paper-button}}
+            {{#paper-button onClick=(action "print") accent=true noInk=true}}Print{{/paper-button}}
+          {{/menu.general}}
+          {{#menu.selected as |selection datatable|}}
+            {{#paper-button onClick=(action "delete" selection datatable) accent=true noInk=true}}Delete{{/paper-button}}
+          {{/menu.selected}}
+        {{/t.menu}}
+        {{#t.content as |c|}}
+          {{#c.header}}
+            {{th-sortable field='title' currentSorting=sort label='Title'}}
+            <th>Author</th>
+            {{th-sortable field='isbn' currentSorting=sort label='ISBN'}}
+            {{th-sortable field='genre' currentSorting=sort label='Genre'}}
+            {{th-sortable field='publicationDate' currentSorting=sort label='Published'}}
+            {{th-sortable field='language' currentSorting=sort label='Language'}}
+            <th># pages</th>
+          {{/c.header}}
+          {{#c.body as |row|}}
+            <td>{{row.title}}</td>
+            <td>{{join ", " (map-by "name" row.authors)}}</td>
+            <td><a href="https://www.google.be/#q=isbn:+{{row.isbn}}&*">{{row.isbn}}</a></td>
+            <td>{{row.genre}}</td>
+            <td>{{moment-format row.publicationDate 'MM/DD/YYYY'}}</td>
+            <td>{{row.language}}</td>
+            <td>{{row.numberOfPages}}</td>
+          {{/c.body}}
+        {{/t.content}}
+      {{/data-table}}
+    {{else}}
+      {{#data-table content=model sort=sort page=page size=size enableSizes=enableSizes lineNumbers=enableLineNumbers as |t|}}
+        {{#t.menu as |menu|}}
+          {{#menu.general}}
+            {{#paper-button onClick=(action "export") accent=true noInk=true}}Export{{/paper-button}}
+            {{#paper-button onClick=(action "print") accent=true noInk=true}}Print{{/paper-button}}
+          {{/menu.general}}
+          {{#menu.selected as |selection datatable|}}
+            {{#paper-button onClick=(action "delete" selection datatable) accent=true noInk=true}}Delete{{/paper-button}}
+          {{/menu.selected}}
+        {{/t.menu}}
+        {{#t.content as |c|}}
+          {{#c.header}}
+            {{th-sortable field='title' currentSorting=sort label='Title'}}
+            <th>Author</th>
+            {{th-sortable field='isbn' currentSorting=sort label='ISBN'}}
+            {{th-sortable field='genre' currentSorting=sort label='Genre'}}
+            {{th-sortable field='publicationDate' currentSorting=sort label='Published'}}
+            {{th-sortable field='language' currentSorting=sort label='Language'}}
+            <th># pages</th>
+          {{/c.header}}
+          {{#c.body as |row|}}
+            <td>{{row.title}}</td>
+            <td>{{join ", " (map-by "name" row.authors)}}</td>
+            <td><a href="https://www.google.be/#q=isbn:+{{row.isbn}}&*">{{row.isbn}}</a></td>
+            <td>{{row.genre}}</td>
+            <td>{{moment-format row.publicationDate 'MM/DD/YYYY'}}</td>
+            <td>{{row.language}}</td>
+            <td>{{row.numberOfPages}}</td>
+          {{/c.body}}
+        {{/t.content}}
+      {{/data-table}}
+    {{/if}}
+  </div>
+  <div class="flex-30 option-panel">
+    <h2>Parameters</h2>
+    <div class="layout-column options">
+      <div class="layout-row layout-align-start-center option">
+        <div class="option-key flex-none">Sorting</div>
+        <div class="option-value">{{#if sort}}{{sort}}{{else}}<i>null</i>{{/if}}</div>
+      </div>
+      <div class="layout-row layout-align-start-center option">
+        <div class="option-key flex-none">Page number</div>
+        <div class="option-value">
+          {{paper-input class="flex-30" value=page onChange=(action (mut page)) type="number" min="0"}}
+        </div>
+      </div>
+      <div class="layout-row layout-align-start-center option">
+        <div class="option-key flex-none">Page size</div>
+        <div class="option-value">
+          {{paper-input class="flex-30" value=size onChange=(action (mut size)) type="number" min="1"}}
+        </div>
+      </div>
+      <div class="layout-row layout-align-start-center option">
+        <div class="option-key flex-none">Search</div>
+        <div class="option-value">{{paper-checkbox value=enableFilter primary=true onChange=(action (mut enableFilter))}}</div>
+      </div>
+      <div class="layout-row layout-align-start-center option">
+        <div class="option-key flex-none">Size options</div>
+        <div class="option-value">{{paper-checkbox value=enableSizes primary=true onChange=(action (mut enableSizes))}}</div>
+      </div>
+      <div class="layout-row layout-align-start-center option">
+        <div class="option-key flex-none">Line numbers</div>
+        <div class="option-value">{{paper-checkbox value=enableLineNumbers primary=true onChange=(action (mut enableLineNumbers))}}</div>
+      </div>
+    </div>
+  </div>
+</div>
