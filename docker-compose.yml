@@ -7,8 +7,8 @@ services:
     links:
       - identifier:backend
     environment:
-      VIRTUAL_HOST: "ember-paper-data-table.semte.ch"
-      LETSENCRYPT_HOST: "ember-paper-data-table.semte.ch"
+      VIRTUAL_HOST: "ember-paper-data-table.semte.ch,ember-data-table.semte.ch"
+      LETSENCRYPT_HOST: "ember-paper-data-table.semte.ch,ember-data-table.semte.ch"
       LETSENCRYPT_EMAIL: "erika.pauwels@gmail.com"
       STATIC_FOLDERS_REGEX: "^/(assets|font|fonts)/"
   identifier:
